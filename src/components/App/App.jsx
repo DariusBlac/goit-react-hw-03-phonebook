@@ -14,7 +14,7 @@ const INITIAL_STATE = [
 
 export class App extends Component {
   state = {
-    contacts: [...INITIAL_STATE],
+    contacts: [],
     filter: '',
   };
 
@@ -29,6 +29,19 @@ export class App extends Component {
       contacts: [...prev.contacts, newContact],
     }));
   };
+
+  componentDidMount() {
+    const LOCAL_CONTACTS = localStorage.getItem('contacts');
+    if (LOCAL_CONTACTS) {
+      this.setState({ contacts: JSON.parse(LOCAL_CONTACTS) });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts.length !== this.state.contacts.length) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   handleDelete = id => {
     this.setState(prev => ({
