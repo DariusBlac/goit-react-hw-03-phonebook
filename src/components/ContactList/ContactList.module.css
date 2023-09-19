@@ -1,0 +1,14 @@
+.list {
+  width: 300px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.list_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

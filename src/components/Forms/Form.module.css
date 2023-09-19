@@ -1,0 +1,16 @@
+.btn {
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: bisque;
+}
+
+.input {
+  width: 100%;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid brown;
+}
